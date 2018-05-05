@@ -12,6 +12,8 @@
 		6B86B32B209E16D600A0FD18 /* RealmSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B86B31D209E16D600A0FD18 /* RealmSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B86B337209E178B00A0FD18 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B86B335209E178A00A0FD18 /* RealmSwift.framework */; };
 		6B86B338209E178B00A0FD18 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B86B336209E178A00A0FD18 /* Realm.framework */; };
+		6B86B33B209E187800A0FD18 /* ModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B86B339209E187700A0FD18 /* ModelObject.swift */; };
+		6B86B33C209E187800A0FD18 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B86B33A209E187700A0FD18 /* Database.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		6B86B32A209E16D600A0FD18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B86B335209E178A00A0FD18 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		6B86B336209E178A00A0FD18 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		6B86B339209E187700A0FD18 /* ModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelObject.swift; sourceTree = "<group>"; };
+		6B86B33A209E187700A0FD18 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				6B86B31D209E16D600A0FD18 /* RealmSupport.h */,
+				6B86B33A209E187700A0FD18 /* Database.swift */,
+				6B86B339209E187700A0FD18 /* ModelObject.swift */,
 				6B86B31E209E16D600A0FD18 /* Info.plist */,
 			);
 			path = RealmSupport;
@@ -164,6 +170,7 @@
 				TargetAttributes = {
 					6B86B319209E16D600A0FD18 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					6B86B322209E16D600A0FD18 = {
 						CreatedOnToolsVersion = 9.3;
@@ -210,6 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B86B33C209E187800A0FD18 /* Database.swift in Sources */,
+				6B86B33B209E187800A0FD18 /* ModelObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +364,7 @@
 		6B86B32F209E16D600A0FD18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -375,6 +385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arkdan.RealmSupport;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -383,6 +394,7 @@
 		6B86B330209E16D600A0FD18 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -411,6 +423,7 @@
 		6B86B332209E16D600A0FD18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RealmSupportTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -428,6 +441,7 @@
 		6B86B333209E16D600A0FD18 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RealmSupportTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
